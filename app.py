@@ -52,6 +52,11 @@ def inject_custom_css():
                 background-color: var(--bg-color);
             }
             
+            /* Hide Streamlit Header, Menu, and Footer */
+            #MainMenu {visibility: hidden;}
+            header {visibility: hidden;}
+            footer {visibility: hidden;}
+            
             /* KPI Cards - Premium Glassmorphism / Shadow */
             .kpi-card {
                 background-color: var(--card-bg);
