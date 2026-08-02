@@ -199,7 +199,7 @@ def load_data(file):
                     file.seek(0)
                     df = pd.read_csv(file, encoding='latin1')
         else:
-            df = pd.read_excel(file, engine='calamine')
+            df = pd.read_excel(file)
         return df, None
     except Exception as e:
         return None, str(e)
@@ -316,8 +316,8 @@ def main():
         st.sidebar.image("logo.png", use_container_width=True)
         
     # --- File Upload ---
-    uploaded_file = st.sidebar.file_uploader("📂 Upload Excel/CSV", type=['xlsx', 'xls', 'csv'])
-    uploaded_file_prev = st.sidebar.file_uploader("📂 Upload Previous Month Excel/CSV (Optional)", type=['xlsx', 'xls', 'csv'])
+    uploaded_file = st.sidebar.file_uploader("📂 Upload Excel/CSV", type=['xlsx', 'xls', 'csv', 'xlsb'])
+    uploaded_file_prev = st.sidebar.file_uploader("📂 Upload Previous Month Excel/CSV (Optional)", type=['xlsx', 'xls', 'csv', 'xlsb'])
     
     if not uploaded_file:
         st.info("👋 Please upload a Claims file from the sidebar to start analysis.")
